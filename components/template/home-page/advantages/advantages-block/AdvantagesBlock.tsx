@@ -21,4 +21,8 @@ export const AdvantagesBlock: FC<IProps> = forwardRef((({svg, text}, ref) => {
     );
 }))
 
+AdvantagesBlock.displayName = 'AdvantagesBlock'
+
 export const MAdvantagesBlock = motion(AdvantagesBlock)
+
+MAdvantagesBlock.displayName = 'MAdvantagesBlock'

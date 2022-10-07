@@ -19,4 +19,8 @@ export const CategoryCard: FC<{svg: string, name: string}> = forwardRef(({svg, n
     );
 });
 
+CategoryCard.displayName = 'CategoryCard'
+
 export const MCategoryCard = motion(CategoryCard)
+
+MCategoryCard.displayName = 'MCategoryCard'

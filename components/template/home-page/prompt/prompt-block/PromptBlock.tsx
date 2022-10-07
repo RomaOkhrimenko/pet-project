@@ -21,4 +21,8 @@ export const PromptBlock: FC<IProps> = forwardRef(({img, text}, ref) => {
     );
 });
 
+PromptBlock.displayName = 'PromptBlock'
+
 export const MPromptBlock = motion(PromptBlock)
+
+MPromptBlock.displayName = '<PromptBlock'

@@ -27,5 +27,9 @@ export const ProductCard = forwardRef((props, ref) => {
     );
 });
 
+ProductCard.displayName = 'ProductCard'
+
 export const MProductCard = motion(ProductCard)
+
+MProductCard.displayName = 'MProductCard'
 

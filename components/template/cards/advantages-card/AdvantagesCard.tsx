@@ -18,5 +18,9 @@ export const AdvantagesCard: FC<IProps> = forwardRef(({svg, text}, ref) => {
     );
 });
 
+AdvantagesCard.displayName = 'AdvantagesCard'
+
 
 export const MAdvantagesCard = motion(AdvantagesCard)
+
+MAdvantagesCard.displayName = 'MAdvantagesCard'
