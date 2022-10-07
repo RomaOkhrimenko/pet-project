@@ -12,7 +12,6 @@ const Header = () => {
 
     const handleMenuStatus = () => {
         setIsMenu(prev => !prev)
-        isMenu ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'hidden'
     }
     return (
         <>
