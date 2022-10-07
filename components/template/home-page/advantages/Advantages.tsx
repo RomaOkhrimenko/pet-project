@@ -133,7 +133,7 @@ const Advantages = () => {
 
                 <motion.div className={styles.advantages_info__right} initial={'hidden'} viewport={{amount: 0.2, once: true}} whileInView={'visible'}>
                     <motion.div variants={opacityXPlusVariant}>
-                        <Image src={AdvantagesImage} />
+                        <Image src={AdvantagesImage} alt={'Best drink advantages'} />
                     </motion.div>
                     <motion.div variants={opacityXMinusVariant} className={styles.advantages_info__right_text}>
                         <p>Співробітники <b>Best Drink</b> з задоволенням виконують свою роботу задля того, щоб Ви могли насолодитися святковим моментом та вишуканим смаком якісного напою, який Ви можете обрати в залежності від Ваших вподобань.</p>

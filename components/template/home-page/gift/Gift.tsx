@@ -29,7 +29,7 @@ const Gift = () => {
 
             <motion.div className={styles.gift_info} whileInView={'visible'} initial={'hidden'} viewport={{amount: 0.2, once: true}} >
                 <motion.div variants={animateGiftImage} className={styles.gift_info__image}>
-                    <Image src={GiftImage} alt='Best drink Gift' />
+                    <Image src={GiftImage} alt='Best drink Gift'  />
                 </motion.div>
                 <div className={styles.gift_info__text}>
                     <motion.p variants={opacityXMinusVariant} custom={1}>Якщо ви у пошуку оригінального подарунку поважній людині і хочете, щоб Вас запам’ятали за добрий смак і вміння справити враження? Ми пропонуємо замовити подарунковий набір. Бережно запакований якісний напій подарує незабутні враження і позитивні емоції, бо це і є головна мета будь-якого подарунка.</motion.p>

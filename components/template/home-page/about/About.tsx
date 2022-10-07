@@ -32,7 +32,7 @@ const About = () => {
                 </span>
             </motion.div>
             <motion.div variants={animateImage} initial={'hidden'} whileInView={'visible'} viewport={{amount: 0.4, once: true}} className={styles.about__image}>
-                <Image src={AboutImage} />
+                <Image src={AboutImage} alt={'Best drink about'} />
             </motion.div>
         </motion.div>
     );

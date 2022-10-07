@@ -17,7 +17,7 @@ const Product = () => {
     return (
         <div className={styles.product}>
             <motion.div whileInView={'visible'} initial={'hidden'} viewport={{amount: 0.2, once: true}} variants={opacityXMinusVariant} className={styles.product__image}>
-                <Image src={ProductImage} objectFit={'contain'} />
+                <Image src={ProductImage} objectFit={'contain'} alt={'Best drink product'} />
             </motion.div>
             <div className={styles.product_info}>
                 <motion.h3 whileInView={'visible'} initial={'hidden'} viewport={{amount: 0.2, once: true}} variants={opacityXPlusVariant} className={styles.product_info__title}>Горілка «Finlandia» – 3л</motion.h3>

@@ -11,7 +11,7 @@ export const ProductCard = forwardRef((props, ref) => {
     return (
         // @ts-ignore
         <div ref={ref} className={styles.product_card}>
-            <Image width={155} height={223} src={ProductImage} />
+            <Image width={155} height={223} src={ProductImage} alt={'Best drink product'} />
 
             <h4 className={styles.product_card__title}>
                 Коньяк “Молдова” 10 л

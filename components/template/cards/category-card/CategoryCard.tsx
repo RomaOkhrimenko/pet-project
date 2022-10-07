@@ -9,7 +9,7 @@ export const CategoryCard: FC<{svg: string, name: string}> = forwardRef(({svg, n
         // @ts-ignore
         <div ref={ref} className={styles.category_card}>
             <div className={styles.category_card__image}>
-                <Image src={svg} />
+                <Image src={svg} alt={'Best drink'} />
             </div>
             <div className={styles.category_card__line} />
             <div className={styles.category_card__name}>
