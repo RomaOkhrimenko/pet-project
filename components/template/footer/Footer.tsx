@@ -20,7 +20,7 @@ const Footer = () => {
             <div className={`${styles.footer_container} container`}>
             <motion.div whileInView={'visible'} variants={opacityXMinusVariant} initial={'hidden'} viewport={{amount: 0.2, once: true}} className={styles.footer_left}>
                 {navigation.map((item, index) => {
-                    return <Link href={item.href}>{item.name}</Link>
+                    return <Link key={item.name} href={item.href}>{item.name}</Link>
                 })}
             </motion.div>
             <div className={styles.footer_right}>

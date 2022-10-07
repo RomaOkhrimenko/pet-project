@@ -25,7 +25,7 @@ interface ICategories {
 const Category = () => {
     return (
         <div className={styles.category}>
-            {categoryData.map((category:ICategories ) => <MCategoryCard initial={'hidden'} whileInView={'visible'} viewport={{amount: 0.2, once: true}} variants={opacityYVariant} svg={category.image} name={category.name} />)}
+            {categoryData.map((category:ICategories ) => <MCategoryCard key={category.name} initial={'hidden'} whileInView={'visible'} viewport={{amount: 0.2, once: true}} variants={opacityYVariant} svg={category.image} name={category.name} />)}
         </div>
     );
 };

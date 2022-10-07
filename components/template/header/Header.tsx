@@ -12,9 +12,7 @@ const Header = () => {
 
     const handleMenuStatus = () => {
         setIsMenu(prev => !prev)
-
         isMenu ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'hidden'
-
     }
     return (
         <>
@@ -52,7 +50,7 @@ const Header = () => {
                             <ul>
                                 {navigation.map((item: any, index: number) => {
                                     return (
-                                        <motion.li initial={'hidden'} animate={'visible'} variants={opacityYVariant} custom={index}><Link href={item.href}>{item.name}</Link></motion.li>
+                                        <motion.li initial={'hidden'} key={item.name} animate={'visible'} variants={opacityYVariant} custom={index}><Link href={item.href}>{item.name}</Link></motion.li>
                                     )
                                 })}
                             </ul>
@@ -70,12 +68,9 @@ const Header = () => {
                 </svg>
 
                 <div className={`${styles.header_phone__menu} ${isMenu ? styles.active : ''}`}>
-                    <Link href="/">Головна</Link>
-                    <Link href="/">Каталог</Link>
-                    <Link href="/">Корзина</Link>
-                    <Link href="/">Оплата і доставка</Link>
-                    <Link href="/">Обмін і повернення</Link>
-                    <Link href="/">Способи доставки</Link>
+                    {navigation.map((item) => {
+                        return <Link onClick={handleMenuStatus} key={item.name} href={item.href}>{item.name}</Link>
+                    })}
                 </div>
             </div>
         </>
