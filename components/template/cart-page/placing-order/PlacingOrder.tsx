@@ -18,26 +18,26 @@ const PlacingOrder = () => {
             <div className={styles.placing_order_content}>
                 <form className={styles.placing_order_form}>
                     <motion.h3 whileInView={'visible'} initial={'hidden'} variants={opacityXMinusVariant} viewport={{amount: 0.2, once: true}} className={styles.placing_order_form__title}>Оформлення замовлення</motion.h3>
-                    <motion.div whileInView={'visible'} initial={'hidden'} variants={opacityYVariant} viewport={{amount: 0.2, once: true}} className={styles.placing_order_form__inputs}>
-                        <div className={styles.input_wrap}>
+                    <div className={styles.placing_order_form__inputs}>
+                        <motion.div whileInView={'visible'} initial={'hidden'} variants={opacityYVariant} viewport={{amount: 0.2, once: true}} className={styles.input_wrap}>
                             <input type="text" required />
                             <label>Введіть ваше ім’я</label>
-                        </div>
-                        <div className={styles.input_wrap}>
+                        </motion.div>
+                        <motion.div whileInView={'visible'} initial={'hidden'} variants={opacityYVariant} viewport={{amount: 0.2, once: true}} className={styles.input_wrap}>
                             <input type="text" required />
                             <label>Телефон</label>
-                        </div>
-                    </motion.div>
-                    <motion.div whileInView={'visible'} initial={'hidden'} variants={opacityYVariant} viewport={{amount: 0.5, once: true}} custom={1} className={styles.placing_order_form__inputs}>
-                        <div className={styles.input_wrap}>
+                        </motion.div>
+                    </div>
+                    <div className={styles.placing_order_form__inputs}>
+                        <motion.div whileInView={'visible'} initial={'hidden'} variants={opacityYVariant} viewport={{amount: 0.5, once: true}} className={styles.input_wrap}>
                             <input type="text" required />
                             <label>Прізвище</label>
-                        </div>
-                        <div className={styles.input_wrap}>
+                        </motion.div>
+                        <motion.div whileInView={'visible'} initial={'hidden'} variants={opacityYVariant} viewport={{amount: 0.5, once: true}} className={styles.input_wrap}>
                             <input type="text" required />
                             <label>Адреса, номер відділення</label>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </div>
                     <motion.div whileInView={'visible'} initial={'hidden'} variants={opacityYVariant} viewport={{amount: 0.2, once: true}} className={styles.placing_order_form__checkbox}>
                         <input type="checkbox" />
                         <label>Погоджуюсь на обробку персональних даних</label>

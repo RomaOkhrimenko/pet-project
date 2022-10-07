@@ -24,7 +24,7 @@ const Products = () => {
             <motion.h2 variants={opacityXMinusVariant} whileInView={'visible'} viewport={{amount: 0.2, once: true}} initial={'hidden'}>Товари для доставки</motion.h2>
             <div className={styles.products_cart__container}>
                 <div className={styles.products_cart__products}>
-                    <motion.div whileInView={'visible'} initial={'hidden'} viewport={{amount: 0.2, once: true}} variants={animateLine} className={styles.products_cart__products_line}></motion.div>
+                    <div className={styles.products_cart__products_line}></div>
                         <ProductCart />
                         <ProductCart />
                         <ProductCart />
