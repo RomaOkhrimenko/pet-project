@@ -1,0 +1,135 @@
+.footer {
+  background-color: var(--color-default);
+  padding-top: 11.4rem;
+  padding-bottom: 14rem;
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 994px) {
+      justify-content: center;
+    }
+  }
+
+  &_left {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 14px;
+
+    @media (max-width: 994px) {
+      display: none;
+    }
+
+    a {
+      color: var(--color-white);
+      margin-bottom: 2rem;
+      transition: color 0.5s;
+
+      &:hover {
+        color: var(--color-red);
+      }
+    }
+  }
+
+  &_right {
+    display: flex;
+
+    @media (max-width: 994px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &_info {
+    margin-right: 24rem;
+
+    @media (max-width: 1280px) {
+      margin-right: 14rem;
+    }
+
+    @media (max-width: 994px) {
+      margin-right: 0;
+    }
+
+    h4 {
+      font-family: var(--font-helios);
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 57px;
+      text-align: center;
+      color: var(--color-white);
+      margin-bottom: 2.6rem;
+    }
+
+    & > div {
+      @media (max-width: 994px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+      }
+    }
+
+    & > div > div {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &_questions {
+    display: flex;
+    flex-direction: column;
+    max-width: 310px;
+
+    @media (max-width: 994px) {
+      text-align: center;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 1.7rem;
+      line-height: 25px;
+      color: var(--color-white);
+      margin-bottom: 2rem;
+
+      @media (max-width: 994px) {
+        &:first-child {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #828385;
+
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        color: #828385;
+        padding-bottom: 1rem;
+        margin-bottom: 4rem;
+      }
+
+      button {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 25px;
+        color: var(--color-white);
+        padding: 1.4rem 4.5rem;
+        background-color: var(--color-red);
+        transition: background-color 0.5s;
+
+        &:hover {
+          background-color: var(--color-dark-red);
+        }
+      }
+    }
+  }
+}

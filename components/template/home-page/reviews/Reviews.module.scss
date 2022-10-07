@@ -1,0 +1,14 @@
+.reviews {
+  background-color: #1E1E22;
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+  margin-bottom: 10rem;
+  &__title {
+    font-family: var(--font-helios);
+    font-weight: 700;
+    font-size: 6.5rem;
+    line-height: 74px;
+    color: var(--color-white);
+    margin-bottom: 4rem;
+  }
+}

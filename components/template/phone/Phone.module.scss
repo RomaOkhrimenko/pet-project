@@ -1,0 +1,25 @@
+.phone {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  transition: color 0.5s;
+
+  svg {
+    transition: transform 0.5s;
+  }
+
+  &:hover {
+    color: var(--color-dark-red);
+
+    svg {
+      transform: rotate(45deg) translateX(5px) translateY(-5px);
+    }
+  }
+
+  svg {
+    margin-right: 1.1rem;
+  }
+}

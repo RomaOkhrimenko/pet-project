@@ -1,0 +1,25 @@
+.advantages_block {
+  background-color: var(--color-grey);
+  width: 169px;
+  height: 152px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-white);
+  padding: 1rem;
+
+  svg {
+    width: 54px !important;
+    height: 50px !important;
+    margin-bottom: 1rem;
+  }
+
+  span {
+    font-family: var(--font-helios);
+    font-weight: 700;
+    font-size: 1.7rem;
+    line-height: 20px;
+    text-align: center;
+  }
+}

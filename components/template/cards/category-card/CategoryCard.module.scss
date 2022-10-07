@@ -1,0 +1,35 @@
+.category_card {
+  width: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:hover {
+    .category_card__line {
+      transform: scaleX(0.5);
+    }
+
+    .category_card__name {
+      color: var(--color-red);
+    }
+  }
+
+  &__line {
+    height: 3px;
+    background-color: var(--color-red);
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1.6rem;
+    transition: transform 0.5s
+  }
+
+  &__name {
+    font-family: var(--font-helios);
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 25px;
+    transition: color 0.5s;
+  }
+}

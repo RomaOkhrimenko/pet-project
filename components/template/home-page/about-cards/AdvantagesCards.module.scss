@@ -1,0 +1,11 @@
+.advantages_cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 994px) {
+    justify-content: center;
+  }
+}

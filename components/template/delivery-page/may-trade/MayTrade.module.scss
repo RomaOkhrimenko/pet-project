@@ -1,0 +1,113 @@
+.may_trade {
+  margin-bottom: 11rem;
+
+  @media (max-width: 767px) {
+    margin-bottom: 3rem;
+  }
+    &__title {
+      font-family: var(--font-helios);
+      font-weight: 700;
+      font-size: 6.5rem;
+      line-height: 60px;
+      margin-bottom: 5rem;
+
+      @media (max-width: 994px) {
+        font-size: 5.5rem;
+        line-height: 55px;
+      }
+
+      @media (max-width: 554px) {
+        font-size: 4.3rem;
+        line-height: 37px;
+      }
+    }
+
+  &__steps {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 994px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    &_step {
+      position: relative;
+      display: flex;
+      align-items: center;
+      left: 3rem;
+
+      &:first-child {
+        span {
+          right: 3rem;
+        }
+      }
+
+      @media (max-width: 994px) {
+        padding-bottom: 10rem;
+        &:nth-child(2) {
+          position: relative;
+          top: 8rem;
+        }
+
+        &:nth-child(3) {
+          position: relative;
+          top: 18rem;
+        }
+      }
+
+      @media (max-width: 767px) {
+        padding-bottom: 0;
+        margin-bottom: 8rem;
+        left: 0;
+
+        &:first-child {
+          span {
+            right: 1rem;
+          }
+        }
+
+        &:nth-child(2) {
+          top: 0;
+        }
+
+        &:nth-child(3) {
+          top: 0;
+        }
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 15rem;
+        line-height: 27px;
+        color: rgba(191, 11, 11, 0.07);
+
+        @media (max-width: 994px) {
+          font-size: 12rem;
+        }
+      }
+
+      span {
+        position: relative;
+        right: 6rem;
+
+
+        font-weight: 400;
+        font-size: 1.7rem;
+        line-height: 27px;
+        max-width: 284px;
+
+        @media (max-width: 994px) {
+          max-width: 180px;
+          right: 3.5rem;
+        }
+
+        @media (max-width: 767px) {
+          max-width: none;
+        }
+      }
+    }
+  }
+}

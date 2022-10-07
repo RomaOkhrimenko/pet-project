@@ -1,0 +1,46 @@
+.similar_products {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14rem;
+  &__title {
+    font-family: var(--font-helios);
+    font-weight: 700;
+    font-size: 6.5rem;
+    line-height: 74px;
+    color: #292929;
+    margin-bottom: 4rem;
+
+    @media (max-width: 994px) {
+      font-size: 5rem;
+      line-height: 5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 4.5rem;
+    row-gap: 3rem;
+
+    @media (max-width: 994px) {
+      justify-content: center;
+      gap: 3rem;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    button {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 20px;
+      letter-spacing: -0.009em;
+      padding: 1.5rem 3rem;
+      background-color: var(--color-red);
+      cursor: pointer;
+      color: var(--color-white);
+    }
+  }
+}

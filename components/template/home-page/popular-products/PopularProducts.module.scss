@@ -1,0 +1,50 @@
+.popular_products {
+  margin-bottom: 95px;
+
+  &__title {
+    font-family: var(--font-helios);
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 74px;
+    margin-bottom: 6rem;
+
+    @media (max-width: 1280px) {
+      font-size: 5rem;
+      line-height: 53px;
+      margin-bottom: 5rem;
+    }
+
+    @media (max-width: 994px) {
+      text-align: center;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 4.5rem;
+    justify-content: center;
+  }
+
+  &__button {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 20px;
+    padding: 1.5rem 3rem;
+    background-color: var(--color-red);
+    letter-spacing: -0.009em;
+    color: var(--color-white);
+    transition: background-color 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-dark-red);
+    }
+  }
+
+  &__button_container {
+    display: flex;
+    justify-content: center;
+  }
+}

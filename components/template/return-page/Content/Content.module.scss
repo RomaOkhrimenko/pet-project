@@ -1,0 +1,116 @@
+.content {
+  margin-bottom: 14rem;
+}
+
+.address_delivery {
+  display: flex;
+  justify-content: center;
+  margin-top: 7rem;
+
+  @media (max-width: 994px) {
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 994px) {
+    flex-direction: column;
+  }
+  &__info {
+    margin-right: 5rem;
+
+    @media (max-width: 994px) {
+      margin-right: 3rem;
+    }
+
+    h2 {
+      font-family: var(--font-helios);
+      font-size: 5.5rem;
+      font-weight: 700;
+      line-height: 60px;
+      margin-bottom: 2rem;
+
+      @media (max-width: 1280px) {
+        font-size: 4rem;
+        line-height: 4rem;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 3rem;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    p {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      margin-top: 3rem;
+
+      @media (max-width: 1280px) {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+      }
+
+      @media (max-width: 767px) {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        font-size: 1.6rem;
+      }
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 20px;
+      padding-bottom: 10rem;
+      position: relative;
+
+      @media (max-width: 767px) {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__image {
+    min-width: 471px;
+
+    & > span {
+      box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.35);
+    }
+    @media (max-width: 1280px) {
+      min-width: 400px;
+    }
+
+    @media (max-width: 994px) {
+      text-align: center;
+      min-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      & > span {
+        width: 100% !important;
+        object-fit: cover !important;
+      }
+    }
+  }
+}
+
+.address_delivery_reverse {
+
+  @media (max-width: 994px) {
+    flex-direction: column-reverse;
+  }
+
+  .address_delivery__image {
+    margin-right: 5rem;
+
+    @media (max-width: 994px) {
+      margin-right: 3rem;
+    }
+  }
+
+  .address_delivery__info {
+    margin-right: 0 !important;
+  }
+}

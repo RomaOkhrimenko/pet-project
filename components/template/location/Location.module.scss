@@ -1,0 +1,12 @@
+.location {
+  display: flex;
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 13px;
+  align-items: center;
+
+  svg {
+    margin-right: 1rem;
+  }
+}

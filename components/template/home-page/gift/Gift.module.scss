@@ -1,0 +1,55 @@
+.gift {
+  margin-bottom: 10rem;
+  &__title {
+    font-family: var(--font-helios);
+    font-weight: 700;
+    font-size: 6.5rem;
+    line-height: 65px;
+
+    color: var(--color-title-black);
+    margin-bottom: 4rem;
+
+    @media (max-width: 1280px) {
+      font-size: 5rem;
+      line-height: 53px;
+    }
+
+    @media (max-width: 994px) {
+      text-align: center;
+    }
+  }
+
+  &_info {
+    display: flex;
+
+    @media (max-width: 994px) {
+      flex-direction: column;
+    }
+    &__image {
+      margin-right: 6rem;
+      @media (max-width: 994px) {
+        margin: 0 auto 4rem;
+      }
+      span {
+        width: 300px !important;
+
+        @media (max-width: 994px) {
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+      }
+
+    }
+
+    &__text {
+      padding-top: 1rem;
+      p {
+        font-weight: 400;
+        font-size: 1.7rem;
+        line-height: 27px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+}

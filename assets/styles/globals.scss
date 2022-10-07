@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	font-size: 10px;
+}
+
+body {
+	font-family: var(--font-gotham-pro);
+	color: var(--color-default);
+	background-color: var(--color-bg);
+	min-height: 100vh;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 2rem;
+	max-width: var(--container-lg);
+
+	@media (max-width: 1440px) {
+		max-width: var(--container-md);
+	}
+}
+
+.location {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 15px;
+	color: #828385;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+input {
+	outline: none;
+}
+
+button {
+	border: none;
+	outline: none;
+}

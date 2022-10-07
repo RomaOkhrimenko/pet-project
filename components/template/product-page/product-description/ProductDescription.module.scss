@@ -1,0 +1,22 @@
+.product_description {
+  margin-bottom: 8.5rem;
+  &__title {
+    font-family: var(--font-helios);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 46px;
+    margin-bottom: 2.5rem;
+
+    @media (max-width: 994px) {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 25px;
+    color: #000000;
+  }
+}

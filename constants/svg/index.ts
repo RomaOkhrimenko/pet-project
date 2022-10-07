@@ -1,0 +1,1 @@
+export {default as SearchIco} from './search.svg'
