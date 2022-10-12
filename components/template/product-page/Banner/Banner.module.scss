@@ -1,5 +1,4 @@
 .banner {
-  background-color: #000;
   height: 346px;
   overflow: hidden;
   position: relative;
@@ -15,6 +14,10 @@
     height: 180px;
   }
 
+  &_wrapper {
+    background-color: #000;
+  }
+
 
 
   &:before {
@@ -23,19 +26,17 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 28%;
+    width: 18%;
     height: 100%;
     z-index: 2;
 
     @media (max-width: 1440px) {
+      background: linear-gradient(90deg, #000 0%, #000 58.29%, rgba(0, 0, 0, 0.78) 61.43%, rgba(0, 0, 0, 0) 77.14%);
       width: 15%;
     }
 
-
-
     @media (max-width: 994px) {
       width: 10%;
-      background: linear-gradient(90deg, #000 0%, #000 47.28%, rgba(0, 0, 0, 0.44) 70.96%, rgba(0, 0, 0, 0) 90.96%);
     }
 
     @media (max-width: 554px) {
@@ -50,7 +51,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 90%;
+    width: 100%;
     height: 100%;
     z-index: 2;
 
@@ -88,7 +89,7 @@
 
   &__image {
     position: absolute;
-    left: 10%;
+    left: 0;
     bottom: 0;
     z-index: 0;
     max-width: 800px;
@@ -99,7 +100,7 @@
     }
 
     @media (max-width: 1440px) {
-      left: 5%;
+      left: 0;
     }
 
     @media (max-width: 1280px) {

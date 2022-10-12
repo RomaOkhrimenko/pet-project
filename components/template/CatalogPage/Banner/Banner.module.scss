@@ -1,9 +1,12 @@
 .banner {
-  background-color: #000;
   height: 346px;
   overflow: hidden;
   position: relative;
   margin-bottom: 7.2rem;
+
+  &_wrapper {
+    background-color: #000;
+  }
 
   @media (max-width: 994px) {
     height: 314px;
@@ -23,7 +26,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 52%;
+    width: 45%;
     height: 100%;
     z-index: 2;
 
@@ -42,7 +45,7 @@
     background: linear-gradient(270deg, #080708 0%, #070607 46.76%, rgba(5, 3, 4, 0) 50.94%);
     top: 0;
     right: 0;
-    width: 55%;
+    width: 45%;
     height: 100%;
     z-index: 2;
 

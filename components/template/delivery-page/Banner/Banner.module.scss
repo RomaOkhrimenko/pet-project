@@ -1,5 +1,4 @@
 .banner {
-  background-color: #000;
   height: 346px;
   overflow: hidden;
   position: relative;
@@ -15,7 +14,9 @@
     height: 180px;
   }
 
-
+  &_wrapper {
+    background-color: #000;
+  }
 
   &:before {
     content: '';
@@ -23,7 +24,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 32%;
+    width: 5%;
     height: 100%;
     z-index: 2;
 
@@ -50,7 +51,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 92%;
+    width: 112%;
     height: 100%;
     z-index: 2;
 
@@ -88,7 +89,7 @@
 
   &__image {
     position: absolute;
-    left: 18%;
+    left: 0;
     bottom: 0;
     z-index: 0;
 

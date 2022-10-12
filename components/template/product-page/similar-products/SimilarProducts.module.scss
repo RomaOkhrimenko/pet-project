@@ -42,6 +42,11 @@
       background-color: var(--color-red);
       cursor: pointer;
       color: var(--color-white);
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: var(--color-dark-red);
+      }
     }
   }
 }
