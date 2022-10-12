@@ -1,27 +1,61 @@
-import React, {forwardRef} from 'react';
+import React, {forwardRef, useEffect, useState} from 'react';
 import {motion} from "framer-motion";
 
 import styles from './ProductCard.module.scss'
 
-import ProductImage from '../../../../public/images/png/product-image.png'
 import Image from "next/image";
 import Button from "../../../ui/Button";
+import {useRouter} from "next/router";
+import {useAppDispatch, useAppSelector} from "../../../../hooks/redux";
+import {addCartItem} from "../../../../store/redux/slices/cartSlice";
+import {IProduct} from "../../../../assets/types/IProduct";
 
-export const ProductCard = forwardRef((props, ref) => {
+interface IProps {
+    product: IProduct
+}
+
+export const ProductCard = forwardRef(({product}: IProps, ref) => {
+    const [isCartItem, setIsCartItem] = useState(false)
+
+    const products = useAppSelector(state => state.cart.products)
+    const dispatch = useAppDispatch()
+    const router = useRouter()
+
+    const onClick = (e: any) => {
+        if(e.target.closest('.btn-cart')) {
+            return
+0        }
+        router.push(`/product/${product.slug}`)
+    }
+
+    const addToCart = () => {
+        if(isCartItem) {
+            router.push('/cart')
+            return
+        }
+        dispatch(addCartItem(product))
+    }
+
+    useEffect(() => {
+        const isEntry = products.find(item => item.slug === product.slug)
+        if (isEntry) {
+            setIsCartItem(true)
+        }
+    }, [products])
     return (
         // @ts-ignore
-        <div ref={ref} className={styles.product_card}>
-            <Image width={155} height={223} src={ProductImage} alt={'Best drink product'} />
+        <div ref={ref} onClick={onClick} className={styles.product_card}>
+            <Image width={155} height={223} src={product.image} alt={'name'} />
 
             <h4 className={styles.product_card__title}>
-                Коньяк “Молдова” 10 л
+                {product.name}
             </h4>
 
             <div className={styles.product_card__bottom}>
                 <span className={styles.product_card__bottom_price}>
-                    Ціна:  635$
+                    Ціна: {product.price}$
                 </span>
-                <Button className={styles.product_card__bottom_button}>В кошик</Button>
+                <Button className={`${styles.product_card__bottom_button} btn-cart`} onClick={addToCart}>{isCartItem ? 'В кошику' : 'В кошик'}</Button>
             </div>
         </div>
     );

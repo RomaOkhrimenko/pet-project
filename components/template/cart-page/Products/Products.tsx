@@ -5,6 +5,7 @@ import styles from './Products.module.scss'
 import Button from "../../../ui/Button";
 import ProductCart from "../../cards/product-cart/ProductCart";
 import {opacityXMinusVariant, opacityXPlusVariant} from "../../../../constants/animation-variants/opacityVariant";
+import {useAppSelector} from "../../../../hooks/redux";
 
 const animateLine = {
     hidden: {
@@ -19,15 +20,22 @@ const animateLine = {
 }
 
 const Products = () => {
+    const products = useAppSelector(state => state.cart.products)
+    const totalPrice = useAppSelector(state => state.cart.totalPrice)
+
+
+    const onClick = () => {
+       const btn = document.querySelector('.order-submit')
+       // @ts-ignore
+        btn.click()
+    }
     return (
         <div className={`${styles.products_cart} container`}>
             <motion.h2 variants={opacityXMinusVariant} whileInView={'visible'} viewport={{amount: 0.2, once: true}} initial={'hidden'}>Товари для доставки</motion.h2>
             <div className={styles.products_cart__container}>
                 <div className={styles.products_cart__products}>
                     <div className={styles.products_cart__products_line}></div>
-                        <ProductCart />
-                        <ProductCart />
-                        <ProductCart />
+                    {products.map(item => <ProductCart key={item.slug} counts={item.counts} price={item.price} image={item.image} title={item.name} slug={item.slug} />)}
                 </div>
 
                 <div className={styles.products_cart_info}>
@@ -37,7 +45,7 @@ const Products = () => {
                         </div>
                         <div className={styles.products_cart_info__counts}>
                             <span>Кількість товарів:</span>
-                            <b>1</b>
+                            <b>{products.length}</b>
                         </div>
                         <div className={styles.products_cart_info__delivery}>
                             <span>Вартість доставки:</span>
@@ -45,14 +53,15 @@ const Products = () => {
                         </div>
                         <div className={styles.products_cart_info__total}>
                             <span>Загальна сума замовлення:</span>
-                            <b>640 грн</b>
+                            <b>{totalPrice} грн</b>
                         </div>
                     </motion.div>
                     <motion.div variants={opacityXMinusVariant} whileInView={'visible'} viewport={{amount: 0.2, once: true}} initial={'hidden'} className={styles.products_cart_info__button}>
-                        <Button>Оформити замовлення</Button>
+                        <Button onClick={onClick} className={!products.length ? styles.disabled_btn : ''} type={'submit'}>Оформити замовлення</Button>
                     </motion.div>
                 </div>
             </div>
+
         </div>
     );
 };

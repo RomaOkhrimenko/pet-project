@@ -20,6 +20,7 @@
     font-weight: 400;
     font-size: 17px;
     line-height: 25px;
+    margin-top: 1rem;
   }
 
   &__bottom {
@@ -48,6 +49,11 @@
       padding: 0.8rem 2rem;
       background-color: var(--color-red);
       cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: var(--color-dark-red);
+      }
     }
   }
 }

@@ -34,4 +34,4 @@ const Prompt = () => {
     );
 };
 
-export default Prompt;
+export default React.memo(Prompt);

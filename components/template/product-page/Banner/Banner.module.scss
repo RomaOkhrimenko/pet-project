@@ -50,7 +50,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 85%;
+    width: 90%;
     height: 100%;
     z-index: 2;
 
@@ -88,19 +88,29 @@
 
   &__image {
     position: absolute;
-    left: 18%;
+    left: 10%;
     bottom: 0;
     z-index: 0;
+    max-width: 800px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
 
     @media (max-width: 1440px) {
       left: 5%;
+    }
+
+    @media (max-width: 1280px) {
+      left: 0;
     }
 
     @media (max-width: 994px) {
       width: 400px;
       left: 5%;
 
-      span {
+      img {
         height: 314px !important;
       }
     }

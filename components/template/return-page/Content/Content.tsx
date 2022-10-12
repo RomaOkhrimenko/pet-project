@@ -32,14 +32,14 @@ const Content = () => {
                         <motion.p variants={opacityYVariant} custom={4}>Адресна доставка до ваших дверей Новою поштою по тарифам перевізника "Нова Пошта".</motion.p>
                     </motion.div>
                     <motion.div className={styles.address_delivery__image} whileInView={'visible'} initial={'hidden'} variants={opacityXPlusVariant} viewport={{amount: 0.2, once: true}}>
-                        <Image src={AddressImage} alt={'Best drink address'} />
+                        <Image src={AddressImage} alt={'company address'} />
                     </motion.div>
                 </div>
 
 
                 <div className={`${styles.address_delivery} ${styles.address_delivery_reverse}`}>
                     <motion.div className={styles.address_delivery__image} whileInView={'visible'} initial={'hidden'} variants={opacityXMinusVariant} viewport={{amount: 0.2, once: true}}>
-                        <Image src={AddressImage2} alt={'Best drink address 2'} />
+                        <Image src={AddressImage2} alt={'company address 2'} />
                     </motion.div>
 
                     <motion.div className={styles.address_delivery__info} whileInView={'visible'} initial={'hidden'} viewport={{amount: 0.2, once: true}}>

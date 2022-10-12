@@ -13,15 +13,15 @@ const About = () => {
             <motion.div initial={'hidden'} viewport={{once: true}} whileInView={'visible'} variants={opacityXMinusVariant} className={styles.about__info}>
                 <h3 className={styles.about__info_title}>Ми піклуємося про своїх клієнтів</h3>
                 <span className={styles.about__info_text}>
-                    Компанія <b>Best Drink</b> уже понад 5 років дбає про своїх покупців, забезпечуючи їх можливістю придбати якісний і сертифікований товар в будь-який час та день. Сумлінним співробітникам дуже важливо, щоб їх труд був оцінений самою вісокою оцінкою, тому на сайті представлений асортимент відмінної продукції, яка доставляється вчасно у короткі строки <br/>
+                    Компанія <b>Company</b> уже понад 5 років дбає про своїх покупців, забезпечуючи їх можливістю придбати якісний і сертифікований товар в будь-який час та день. Сумлінним співробітникам дуже важливо, щоб їх труд був оцінений самою вісокою оцінкою, тому на сайті представлений асортимент відмінної продукції, яка доставляється вчасно у короткі строки <br/>
                     <b>Ціна товару може змінюватися в залежності від кількості замовленої продукції.</b>
                 </span>
             </motion.div>
             <motion.div variants={opacityYVariant} initial={'hidden'} whileInView={'visible'} viewport={{amount: 0.4, once: true}} className={styles.about__image}>
-                <Image src={AboutImage} alt={'Best drink about'} />
+                <Image src={AboutImage} alt={'Company about'} />
             </motion.div>
         </motion.div>
     );
 };
 
-export default About;
+export default React.memo(About);

@@ -13,7 +13,7 @@ const Banner = () => {
             <div className={styles.banner__top}/>
 
             <motion.div variants={opacityXMinusVariant} initial={'hidden'} animate={'visible'} className={styles.banner__image}>
-                <Image src={BannerImage} objectFit={'cover'} alt={'Best drink banner'} />
+                <Image src={BannerImage} objectFit={'cover'} alt={'company banner'} />
             </motion.div>
 
             <div className={styles.banner__text}>
@@ -25,4 +25,4 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+export default React.memo(Banner);

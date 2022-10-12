@@ -1,11 +1,14 @@
 .category {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 6rem;
   margin-bottom: 9.3rem;
   align-items: flex-end;
   flex-wrap: wrap;
-  gap: 2rem;
+
+  & > div {
+    margin:  1rem 4rem;
+  }
 
   @media (max-width: 768px) {
     justify-content: center;

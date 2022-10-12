@@ -92,6 +92,10 @@
 
     &__button {
       margin-top: 3rem;
+      .disabled_btn {
+        pointer-events: none;
+        opacity: 0.5;
+      }
       button {
         font-weight: 400;
         font-size: 1.6rem;
@@ -100,6 +104,11 @@
         background: var(--color-red);
         padding: 1rem 0;
         width: 100%;
+        transition: background-color 0.5s, opacity 0.5s;
+
+        &:hover {
+          background-color: var(--color-dark-red);
+        }
       }
     }
   }

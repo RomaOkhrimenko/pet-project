@@ -1,19 +1,52 @@
-import React from 'react';
+import React, {FC, useState} from 'react';
 
 import styles from './ProductCart.module.scss'
 import Image from "next/image";
 import productImage from '../../../../public/images/png/attikus.png'
 import Button from "../../../ui/Button";
+import {useAppDispatch} from "../../../../hooks/redux";
+import {decrementCartItem, deleteCartItem, incrementCartItem} from "../../../../store/redux/slices/cartSlice";
 
-const ProductCart = () => {
+interface IProductCart {
+    image: string
+    title: string
+    price: number
+    slug: string
+    counts: number | undefined
+}
+
+const ProductCart: FC<IProductCart> = ({image, title, price, slug, counts}) => {
+    const [currentPrice, setCurrentPrice] = useState(counts! * price)
+
+    const dispatch = useAppDispatch()
+
+    const deleteItem = () => {
+        const body = {slug, price: currentPrice}
+        dispatch(deleteCartItem(body))
+    }
+
+    const incrementItem = () => {
+        const body = {slug}
+        setCurrentPrice(prev => prev + price)
+        dispatch(incrementCartItem(body))
+    }
+
+    const decrementItem = () => {
+        console.log(counts)
+        if(counts! > 1) {
+            setCurrentPrice(prev => prev - price)
+            const body = {slug}
+            dispatch(decrementCartItem(body))
+        }
+    }
     return (
         <div className={styles.product_cart}>
             <div className={styles.product_cart__image}>
-                <Image src={productImage} alt={'product name'} objectFit={'cover'} />
+                <Image src={image} width={130} height={191} alt={'product name'} objectFit={'cover'} />
             </div>
             <div className={styles.product_cart__info}>
                 <h4 className={styles.product_cart__info_title}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    {title}
                 </h4>
                 <div className={styles.product_cart__info_code}>
                     <span>Код</span>
@@ -22,15 +55,17 @@ const ProductCart = () => {
                 <span>Кількість</span>
                 <div className={styles.product_cart__info_counts}>
                     <div className={styles.product_cart__info_counts_btn}>
-                        <Button>-</Button>
-                        <span>1</span>
-                        <Button>+</Button>
+                        <Button onClick={decrementItem}>-</Button>
+                        <span>{counts}</span>
+                        <Button onClick={incrementItem}>+</Button>
                     </div>
                     <div className={styles.product_cart__info_counts_price}>
-                        <span>600 грн</span>
+                        <span>{currentPrice} грн</span>
                     </div>
                 </div>
             </div>
+
+            <div className={styles.product_cart__delete} onClick={deleteItem}>X</div>
         </div>
     );
 };

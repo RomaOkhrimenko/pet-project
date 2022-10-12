@@ -15,4 +15,4 @@ const Reviews = () => {
     );
 };
 
-export default Reviews;
+export default React.memo(Reviews);

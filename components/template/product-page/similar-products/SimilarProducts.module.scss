@@ -18,10 +18,11 @@
 
   &__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 4.5rem;
     row-gap: 3rem;
+    column-gap: 3rem;
 
     @media (max-width: 994px) {
       justify-content: center;

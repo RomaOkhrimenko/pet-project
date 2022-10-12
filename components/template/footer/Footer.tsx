@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FormEvent, useState} from 'react';
 import {motion} from "framer-motion";
 
 import styles from './Footer.module.scss'
@@ -13,8 +13,26 @@ import {
     opacityXPlusVariant,
     opacityYVariant
 } from "../../../constants/animation-variants/opacityVariant";
+import {useAppDispatch} from "../../../hooks/redux";
+import {createConsultation} from "../../../store/redux/actions/consultationAction";
 
 const Footer = () => {
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+
+    const dispatch = useAppDispatch()
+
+    const onSubmit = (e: FormEvent) => {
+        e.preventDefault()
+        const body = {
+            name, phone
+        }
+        dispatch(createConsultation(body))
+
+        setName('')
+        setPhone('')
+    }
+
     return (
         <footer className={styles.footer}>
             <div className={`${styles.footer_container} container`}>
@@ -25,7 +43,7 @@ const Footer = () => {
             </motion.div>
             <div className={styles.footer_right}>
                 <motion.div whileInView={'visible'} variants={opacityYVariant} initial={'hidden'} viewport={{amount: 0.2, once: true}} className={styles.footer_info}>
-                    <h4 className={styles.footer_info__title}>Best Drink</h4>
+                    <h4 className={styles.footer_info__title}>Company</h4>
                     <div>
                         <Location />
                         <Phone />
@@ -34,11 +52,11 @@ const Footer = () => {
                 <motion.div whileInView={'visible'} variants={opacityXPlusVariant} initial={'hidden'} viewport={{amount: 0.2, once: true}} className={styles.footer_questions}>
                     <span>Залишились питання? </span>
                     <span>Заповніть форму нижче і ми зателефонуємо при першій нагоді!</span>
-                    <form>
-                        <input type="text" placeholder={'Name'}/>
-                        <input type="text" placeholder={'Phone'}/>
+                    <form onSubmit={onSubmit}>
+                        <input type="text" placeholder={'Name'} value={name} onChange={(e) => setName(e.target.value)} required={true} />
+                        <input type="text" placeholder={'Phone'} value={phone} onChange={(e) => setPhone(e.target.value)}  required={true} />
                         <div>
-                            <Button>Чекаю відповіді</Button>
+                            <Button type={'submit'}>Чекаю відповіді</Button>
                         </div>
                     </form>
                 </motion.div>
@@ -48,4 +66,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default React.memo(Footer);

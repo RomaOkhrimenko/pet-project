@@ -8,8 +8,13 @@ import Advantages from "../template/home-page/advantages/Advantages";
 import Purpose from "../template/home-page/purpose/Purpose";
 import Gift from "../template/home-page/gift/Gift";
 import Reviews from "../template/home-page/reviews/Reviews";
+import {IProduct} from "../../assets/types/IProduct";
 
-const HomePage = () => {
+interface IProps {
+    products: IProduct[]
+}
+
+const HomePage = ({products}: IProps): JSX.Element => {
     return (
         <div>
             <HomePageBanner />
@@ -17,7 +22,7 @@ const HomePage = () => {
             <div className={'container'}>
                 <AdvantagesCards />
                 <About />
-                <PopularProducts />
+                <PopularProducts products={products} />
                 <Advantages />
             </div>
             {/*<Reviews />*/}

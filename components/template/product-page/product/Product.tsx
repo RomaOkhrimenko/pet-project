@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {motion} from "framer-motion";
 
 import styles from './Product.module.scss'
@@ -12,19 +12,49 @@ import {
     opacityXPlusVariant,
     opacityYVariant
 } from "../../../../constants/animation-variants/opacityVariant";
+import {IProduct} from "../../../../assets/types/IProduct";
+import {addCartItem} from "../../../../store/redux/slices/cartSlice";
+import {useAppDispatch, useAppSelector} from "../../../../hooks/redux";
+import {useRouter} from "next/router";
 
-const Product = () => {
+
+interface IProps {
+    product: IProduct
+}
+const Product: FC<IProps> = ({product}) => {
+    const [isCartItem, setIsCartItem] = useState(false)
+    const router = useRouter()
+    const dispatch = useAppDispatch()
+    const products = useAppSelector((state) => state.cart.products)
+    const AddToCart = () => {
+          if(isCartItem) {
+              router.push('/cart')
+              return
+          }
+         dispatch(addCartItem(product))
+    }
+
+    const getConsultation = () => {
+        window.scrollTo(0, document.body.offsetHeight)
+    }
+
+    useEffect(() => {
+        const isEntry = products.find(item => item.slug === product.slug)
+        if (isEntry) {
+            setIsCartItem(true)
+        }
+    }, [products])
     return (
         <div className={styles.product}>
             <motion.div whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityXMinusVariant} className={styles.product__image}>
-                <Image src={ProductImage} objectFit={'contain'} alt={'Best drink product'} />
+                <img src={product.image}  alt={'Company product'} />
             </motion.div>
             <div className={styles.product_info}>
-                <motion.h3 whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityXPlusVariant} className={styles.product_info__title}>Горілка «Finlandia» – 3л</motion.h3>
-                <motion.span whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityYVariant} className={styles.product_info__price}>Ціна: 250 грн</motion.span>
+                <motion.h3 whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityXPlusVariant} className={styles.product_info__title}>{product.name}</motion.h3>
+                <motion.span whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityYVariant} className={styles.product_info__price}>Ціна: {product.price} грн</motion.span>
                 <motion.div whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityYVariant} className={styles.product_info__buttons}>
-                    <Button className={styles.product_info__buttons_buy}>Купити зараз</Button>
-                    <Button className={styles.product_info__buttons_take}>Отримати консультацію</Button>
+                    <Button className={styles.product_info__buttons_buy} onClick={AddToCart}>{isCartItem ? 'В кошику' : 'Купити зараз'}</Button>
+                    <Button className={styles.product_info__buttons_take} onClick={getConsultation}>Отримати консультацію</Button>
                 </motion.div>
                 <motion.div whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityXMinusVariant} className={styles.product_info__delivery}>
                     <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +66,7 @@ const Product = () => {
                     <span>доставка Новою Поштою</span>
                 </motion.div>
                 <div className={styles.product_info__table_container}>
-                    <TablesPrice />
+                    {product.opt_price.length ? <TablesPrice /> : null}
                 </div>
             </div>
 

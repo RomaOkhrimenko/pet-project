@@ -13,24 +13,35 @@
 
   &__image {
     margin-right: 21.5rem;
+    max-width: 700px;
+    max-height: 700px;
     @media (max-width: 1440px) {
       margin-right: 15rem;
+    }
+
+    @media (max-width: 1280px) {
+      margin-right: 10rem;
     }
 
     @media (max-width: 994px) {
       margin: 0 auto 3rem;
       max-height: 550px;
 
-      span {
+      img {
         max-height: 550px !important;
+        object-fit: contain;
       }
+    }
+
+    img {
+      max-height: 600px;
     }
 
     @media (max-width: 554px) {
       margin: 0 auto 3rem;
       max-height: 375px;
 
-      span {
+      img {
         max-height: 375px !important;
       }
     }
@@ -88,7 +99,7 @@
         transition: background-color 0.5s;
         cursor: pointer;
         margin-right: 4.5rem;
-
+        width: 17rem;
         &:hover {
           background-color: var(--color-dark-red);
         }
@@ -101,6 +112,8 @@
         @media (max-width: 1280px) {
           font-size: 1.3rem;
           padding: 1rem 3rem;
+          width: 14rem;
+          margin-right: 3rem;
         }
 
         @media (max-width: 994px) {

@@ -121,17 +121,17 @@ const Advantages = () => {
                     </motion.div>
 
                     <motion.div className={styles.advantages_info__left_text} initial={'hidden'} viewport={{amount: 0.2, once: true}} whileInView={'visible'}>
-                        <motion.p variants={opacityXMinusVariant}>Співробітники <b>Best Drink</b> з задоволенням виконують свою роботу задля того, щоб Ви могли насолодитися святковим моментом та вишуканим смаком якісного напою, який Ви можете обрати в залежності від Ваших вподобань.</motion.p>
+                        <motion.p variants={opacityXMinusVariant}>Співробітники <b>Company</b> з задоволенням виконують свою роботу задля того, щоб Ви могли насолодитися святковим моментом та вишуканим смаком якісного напою, який Ви можете обрати в залежності від Ваших вподобань.</motion.p>
                     </motion.div>
                     <motion.div initial={'hidden'} viewport={{once: true}} whileInView={'visible'} variants={animateLine} className={styles.advantages_info__left_line}></motion.div>
                 </div>
 
                 <motion.div className={styles.advantages_info__right}>
                     <motion.div initial={'hidden'} viewport={{amount: 0.2, once: true}} whileInView={'visible'} variants={opacityXPlusVariant}>
-                        <Image src={AdvantagesImage} alt={'Best drink advantages'} />
+                        <Image src={AdvantagesImage} alt={'Company advantages'} />
                     </motion.div>
                     <motion.div initial={'hidden'} viewport={{amount: 0.2, once: true}} whileInView={'visible'} variants={opacityXMinusVariant} className={styles.advantages_info__right_text}>
-                        <p>Співробітники <b>Best Drink</b> з задоволенням виконують свою роботу задля того, щоб Ви могли насолодитися святковим моментом та вишуканим смаком якісного напою, який Ви можете обрати в залежності від Ваших вподобань.</p>
+                        <p>Співробітники <b>Company</b> з задоволенням виконують свою роботу задля того, щоб Ви могли насолодитися святковим моментом та вишуканим смаком якісного напою, який Ви можете обрати в залежності від Ваших вподобань.</p>
                     </motion.div>
                     <motion.div initial={'hidden'} viewport={{amount: 0.2, once: true}} whileInView={'visible'} variants={animateLine} className={styles.advantages_info__right_line}></motion.div>
                 </motion.div>
@@ -142,4 +142,4 @@ const Advantages = () => {
     );
 };
 
-export default Advantages;
+export default React.memo(Advantages);

@@ -27,4 +27,4 @@ const Purpose = () => {
     );
 };
 
-export default Purpose;
+export default React.memo(Purpose);

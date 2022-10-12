@@ -7,8 +7,15 @@ import styles from './HomePageBanner.module.scss'
 import Image from "next/image";
 import Button from "../../../ui/Button";
 import {opacityXMinusVariant, opacityXPlusVariant} from "../../../../constants/animation-variants/opacityVariant";
+import {useRouter} from "next/router";
 
 const HomePageBanner = () => {
+
+    const router = useRouter()
+
+    const onClick = () => {
+        router.push('/catalog/2')
+    }
 
     return (
         <div className={styles.banner}>
@@ -18,14 +25,14 @@ const HomePageBanner = () => {
             <div className={styles.banner__bottom} />
 
             <div className={styles.banner__info}>
-                <motion.h1 initial={'hidden'} animate={'visible'} variants={opacityXMinusVariant} custom={1}>Best Drink</motion.h1>
+                <motion.h1 initial={'hidden'} animate={'visible'} variants={opacityXMinusVariant} custom={1}>Company</motion.h1>
                 <motion.span initial={'hidden'} animate={'visible'} variants={opacityXPlusVariant} custom={2}><b>Вишукана якість</b> вітчизняного виробника <b>за доступною ціною</b></motion.span>
                 <motion.div initial={'hidden'} animate={'visible'} variants={opacityXMinusVariant} custom={3}>
-                    <Button className={styles.banner__info_btn}>Каталог</Button>
+                    <Button onClick={onClick} className={styles.banner__info_btn}>Каталог</Button>
                 </motion.div>
             </div>
         </div>
     );
 };
 
-export default HomePageBanner;
+export default React.memo(HomePageBanner);

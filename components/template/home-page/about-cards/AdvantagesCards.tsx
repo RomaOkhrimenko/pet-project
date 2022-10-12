@@ -72,4 +72,4 @@ const AdvantagesCards = () => {
     );
 };
 
-export default AdvantagesCards;
+export default React.memo(AdvantagesCards);

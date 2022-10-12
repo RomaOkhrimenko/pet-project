@@ -6,7 +6,8 @@
   flex-direction: column;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &.active {
     .category_card__line {
       transform: scaleX(0.5);
     }
