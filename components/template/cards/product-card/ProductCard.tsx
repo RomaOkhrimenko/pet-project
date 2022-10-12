@@ -53,7 +53,7 @@ export const ProductCard = forwardRef(({product}: IProps, ref) => {
 
             <div className={styles.product_card__bottom}>
                 <span className={styles.product_card__bottom_price}>
-                    Ціна: {product.price}$
+                    Ціна: {product.price}₴
                 </span>
                 <Button className={`${styles.product_card__bottom_button} btn-cart`} onClick={addToCart}>{isCartItem ? 'В кошику' : 'В кошик'}</Button>
             </div>
