@@ -5,10 +5,11 @@ export interface IProduct {
     image: string,
     in_stock: boolean,
     name: string,
-    opt_price: {counts: string, price: number}[] | {}[],
+    opt_price: {counts: string, price: number, start_count: number}[] | [],
     price: number,
     product_banner_category: string,
     product_banner_img: string,
     slug: string,
-    counts?: number
+    counts?: number,
+    currentPrice?: number
 }

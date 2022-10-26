@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {motion} from "framer-motion";
 
 import styles from './TablesPrice.module.scss'
 import {opacityXMinusVariant} from "../../../../constants/animation-variants/opacityVariant";
 
-const TablesPrice = () => {
+interface IProps {
+    prices: {last_count: number, price: number, counts: string}[] | {}[]
+}
+
+const TablesPrice: FC<IProps> = ({prices}) => {
     return (
         <motion.div whileInView={'visible'} initial={'hidden'} viewport={{amount: 0.2, once: true}} variants={opacityXMinusVariant} className={styles.table_price}>
             <div className={styles.table_price__title}>
@@ -12,26 +16,14 @@ const TablesPrice = () => {
                 <span>Ціна</span>
             </div>
             <div className={styles.table_price__opt}>
-                <div className={styles.table_price__opt_info}>
-                    <span>1-4</span>
-                    <span>200,00 грн</span>
-                </div>
-                <div className={styles.table_price__opt_info}>
-                    <span>5-9</span>
-                    <span>170,00 грн</span>
-                </div>
-                <div className={styles.table_price__opt_info}>
-                    <span>10-19</span>
-                    <span>150,00 грн</span>
-                </div>
-                <div className={styles.table_price__opt_info}>
-                    <span>20-29</span>
-                    <span>140,00 грн</span>
-                </div>
-                <div className={styles.table_price__opt_info}>
-                    <span>30+</span>
-                    <span>135,00 грн</span>
-                </div>
+                {prices.map((item: any) => {
+                    return (
+                        <div className={styles.table_price__opt_info}>
+                            <span>{item.counts}</span>
+                            <span>{item.price} грн</span>
+                        </div>
+                    )
+                })}
             </div>
         </motion.div>
     );

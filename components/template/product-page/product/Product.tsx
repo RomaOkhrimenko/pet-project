@@ -43,6 +43,7 @@ const Product: FC<IProps> = ({product}) => {
         if (isEntry) {
             setIsCartItem(true)
         }
+        console.log(product)
     }, [products])
     return (
         <div className={styles.product}>
@@ -66,7 +67,7 @@ const Product: FC<IProps> = ({product}) => {
                     <span>доставка Новою Поштою</span>
                 </motion.div>
                 <div className={styles.product_info__table_container}>
-                    {product.opt_price.length ? <TablesPrice /> : null}
+                    {product.opt_price.length ? <TablesPrice prices={product.opt_price} /> : null}
                 </div>
             </div>
 

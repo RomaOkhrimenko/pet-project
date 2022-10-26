@@ -13,28 +13,26 @@ interface IProductCart {
     price: number
     slug: string
     counts: number | undefined
+    totalPrice: number | undefined
 }
 
-const ProductCart: FC<IProductCart> = ({image, title, price, slug, counts}) => {
-    const [currentPrice, setCurrentPrice] = useState(counts! * price)
+const ProductCart: FC<IProductCart> = ({image, title, price, slug, counts, totalPrice}) => {
 
     const dispatch = useAppDispatch()
 
     const deleteItem = () => {
-        const body = {slug, price: currentPrice}
+        const body = {slug, price: totalPrice!}
         dispatch(deleteCartItem(body))
     }
 
     const incrementItem = () => {
         const body = {slug}
-        setCurrentPrice(prev => prev + price)
         dispatch(incrementCartItem(body))
     }
 
     const decrementItem = () => {
         console.log(counts)
         if(counts! > 1) {
-            setCurrentPrice(prev => prev - price)
             const body = {slug}
             dispatch(decrementCartItem(body))
         }
@@ -60,7 +58,7 @@ const ProductCart: FC<IProductCart> = ({image, title, price, slug, counts}) => {
                         <Button onClick={incrementItem}>+</Button>
                     </div>
                     <div className={styles.product_cart__info_counts_price}>
-                        <span>{currentPrice} грн</span>
+                        <span>{totalPrice} грн</span>
                     </div>
                 </div>
             </div>

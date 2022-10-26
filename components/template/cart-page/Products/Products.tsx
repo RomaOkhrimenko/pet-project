@@ -35,7 +35,7 @@ const Products = () => {
             <div className={styles.products_cart__container}>
                 <div className={styles.products_cart__products}>
                     <div className={styles.products_cart__products_line}></div>
-                    {products.map(item => <ProductCart key={item.slug} counts={item.counts} price={item.price} image={item.image} title={item.name} slug={item.slug} />)}
+                    {products.map(item => <ProductCart key={item.slug} totalPrice={item.currentPrice} counts={item.counts} price={item.price} image={item.image} title={item.name} slug={item.slug} />)}
                 </div>
 
                 <div className={styles.products_cart_info}>
