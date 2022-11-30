@@ -43,8 +43,11 @@ const Product: FC<IProps> = ({product}) => {
         if (isEntry) {
             setIsCartItem(true)
         }
-        console.log(product)
     }, [products])
+
+    if(!product) {
+        return <div></div>
+    }
     return (
         <div className={styles.product}>
             <motion.div whileInView={'visible'} initial={'hidden'} viewport={{once: true}} variants={opacityXMinusVariant} className={styles.product__image}>

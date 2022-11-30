@@ -22,13 +22,11 @@ export const ProductCard = forwardRef(({product}: IProps, ref) => {
     const router = useRouter()
 
     const onClick = (e: any) => {
-        if(e.target.closest('.btn-cart')) {
-            return
-0        }
         router.push(`/product/${product.slug}`)
     }
 
-    const addToCart = () => {
+    const addToCart = (e: any) => {
+        e.stopPropagation()
         if(isCartItem) {
             router.push('/cart')
             return
@@ -55,7 +53,7 @@ export const ProductCard = forwardRef(({product}: IProps, ref) => {
                 <span className={styles.product_card__bottom_price}>
                     Ціна: {product.price}₴
                 </span>
-                <Button className={`${styles.product_card__bottom_button} btn-cart`} onClick={addToCart}>{isCartItem ? 'В кошику' : 'В кошик'}</Button>
+                <Button className={`${styles.product_card__bottom_button}`} onClick={addToCart}>{isCartItem ? 'В кошику' : 'В кошик'}</Button>
             </div>
         </div>
     );
