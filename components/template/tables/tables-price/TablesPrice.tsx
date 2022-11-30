@@ -16,9 +16,9 @@ const TablesPrice: FC<IProps> = ({prices}) => {
                 <span>Ціна</span>
             </div>
             <div className={styles.table_price__opt}>
-                {prices.map((item: any) => {
+                {prices.map((item: any, index: number) => {
                     return (
-                        <div className={styles.table_price__opt_info}>
+                        <div key={index} className={styles.table_price__opt_info}>
                             <span>{item.counts}</span>
                             <span>{item.price} грн</span>
                         </div>
