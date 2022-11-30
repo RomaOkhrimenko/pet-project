@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const instance = axios.create({
-    baseURL: 'http://localhost:4000/api/'
+    baseURL: 'https://turkey-headscarf.cyclic.app/api'
 })
